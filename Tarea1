@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Ordenamiento
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int temp;
+            int[]edad=new int[5];
+            string[] nombre = new string[5];
+            for (int i = 0; i < edad.Length; i++)
+            {
+                Console.WriteLine("Escribe el Nombre:");
+                nombre[i]=Console.ReadLine();
+                   Console.WriteLine("Escribe la edad:");
+                edad[i]=Convert.ToInt32(Console.ReadLine());
+                  }
+            string seudo;
+
+             for (int i = 0; i < (edad.Length-1); i++)
+            {
+                 for (int j = 0; j < (edad.Length-1); j++)
+                  {
+                     if(edad[j]<edad[j+1])
+                     {
+                         temp=edad[j];
+                         seudo = nombre[j];
+                         edad[j]=edad[j+1];
+                         nombre[j] = nombre[j + 1];
+                         edad[j+1]=temp;
+                         nombre[j + 1] = seudo;
+                        
+                     }
+                 }
+                   
+                  }
+                 Console.WriteLine("Lista:");
+                 for (int p = 0; p < edad.Length; p++)
+            {
+                Console.WriteLine(nombre[p]+":"+edad[p]);
+           
+               
+            }
+                 Console.ReadLine();
+        }
+          
+        }
+    }
